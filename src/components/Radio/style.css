@@ -1,0 +1,9 @@
+.Radio {
+  list-style-type: none;
+  font-size: 1.5rem;
+  margin: 1rem;
+
+  &__label {
+    padding-left: 0.5em;
+  }
+}

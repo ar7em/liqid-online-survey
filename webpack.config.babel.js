@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
-const config = {
+export default {
   entry: {
     app: path.resolve(__dirname, "src", "index.js")
   },
@@ -45,6 +45,7 @@ const config = {
             loader: "postcss-loader",
             options: {
               plugins: [
+                require("postcss-css-reset")(),
                 require("autoprefixer")()
               ]
             }
@@ -65,5 +66,3 @@ const config = {
     })
   ]
 };
-
-module.exports = config;

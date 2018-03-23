@@ -1,0 +1,21 @@
+.Navigate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: pointer;
+  color: #4079ff;
+  background: none;
+  border: none;
+
+  &:hover {
+    background: rgba(182, 224, 226, 0.2);
+    color: #004cff;
+  }
+
+  &__label {
+    text-decoration: underline;
+  }
+}

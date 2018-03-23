@@ -1,5 +1,11 @@
 # LIQID
 
+## Development
+To run development server:
+```
+npm start
+```
+
 ## Frontend coding challenge
 
 ### The Task

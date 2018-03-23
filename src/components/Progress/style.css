@@ -1,0 +1,21 @@
+.Progress {
+  min-width: 10px;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(45deg, #0CABBE, #57D6D9, #F0E2BA, #F0551C);
+  background-size: 400% 400%;
+  animation: Gradient 60s ease infinite;
+  transition: width 1s ease-in-out;
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}

@@ -11,13 +11,13 @@ const App = () => (
       <Progress />
     </Layout.Cover>
     <Layout.Sidebar>
-      <Navigate direction="Back" />
+      <Navigate direction="prev" />
     </Layout.Sidebar>
     <Layout.Content>
       <Stage/>
     </Layout.Content>
     <Layout.Sidebar>
-      <Navigate direction="Next" />
+      <Navigate direction="next" />
     </Layout.Sidebar>
   </Layout.Wrapper>
 );
