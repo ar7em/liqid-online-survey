@@ -1,5 +1,5 @@
 import React from "react";
-import ProgressComponent from "components/progress";
+import ProgressComponent from "components/Progress";
 
 const Progress = () => (
   <ProgressComponent width={50} />

@@ -4,6 +4,7 @@ import Layout from "components/Layout";
 import Navigate from "containers/Navigate";
 import Progress from "containers/Progress";
 import Stage from "containers/Stage";
+import Summary from "containers/Summary";
 
 const App = () => (
   <Layout.Wrapper>
@@ -15,6 +16,7 @@ const App = () => (
     </Layout.Sidebar>
     <Layout.Content>
       <Stage/>
+      <Summary/>
     </Layout.Content>
     <Layout.Sidebar>
       <Navigate direction="next" />

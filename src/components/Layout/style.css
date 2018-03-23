@@ -14,7 +14,7 @@ $z-index-content: 10;
     display: inline-block;
     align-self: center;
     background: white;
-    border-radius: 999px;
+    border-radius: 9999px;
     padding: 2rem;
     text-align: center;
   }

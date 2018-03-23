@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import style from "./style.css";
 
-export default class Text extends React.Component {
+export default class Text extends Component {
   componentDidMount(){
     this.input && this.input.focus();
   }

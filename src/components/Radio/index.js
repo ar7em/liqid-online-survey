@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import style from "./style.css";
 
-export default class Radio extends React.Component {
+export default class Radio extends Component {
   componentDidMount(){
     this.radio && this.radio.focus();
   }
