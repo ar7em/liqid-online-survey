@@ -22,8 +22,10 @@ export default class Radio extends Component {
                   name={this.props.stage}
                   id={key}
                   value={index}
-                  checked={option.checked}
-                  onChange={ () => {} }
+                  checked={index === this.props.answer}
+                  onChange={(e) => {
+                    this.props.onChange(this.props.stage, parseInt(e.target.value, 10));
+                  }}
                   ref={(select) => {
                     if (index === 0) {
                       this.select = select;
@@ -31,7 +33,7 @@ export default class Radio extends Component {
                   }}
                 />
                 <label className={ style.Radio__label } htmlFor={key}>
-                  {option.label}
+                  {option}
                 </label>
               </li>
             );
@@ -44,5 +46,7 @@ export default class Radio extends Component {
 
 Radio.propTypes = {
   options: PropTypes.array.isRequired,
-  stage: PropTypes.string.isRequired
+  stage: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
+  answer: PropTypes.number
 };

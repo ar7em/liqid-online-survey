@@ -15,7 +15,10 @@ export default class Text extends Component {
           className={ style.Text__input }
           placeholder="Your answer..."
           ref={(input) => { this.input = input; }}
-          onChange={ () => {} }
+          value={this.props.answer || ""}
+          onChange={(event) => {
+            this.props.onChange(this.props.stage, event.target.value);
+          }}
         />
       </div>
     );
@@ -23,4 +26,7 @@ export default class Text extends Component {
 }
 
 Text.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  stage: PropTypes.number.isRequired,
+  answer: PropTypes.string
 };

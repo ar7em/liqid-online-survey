@@ -13,15 +13,18 @@ export default class Dropdown extends Component {
       <select
         className={ style.Dropdown }
         ref={(select) => { this.select = select; }}
+        value={this.props.answer}
+        onChange={(e) => {
+          this.props.onChange(this.props.stage, parseInt(e.target.value, 10));
+        }}
       >
         {
           this.props.options.map( (option, index) => (
             <option
               key={`${this.props.stage}-${index}`}
               value={index}
-              onChange={ () => {} }
             >
-              { option.label }
+              { option }
             </option>
           ))
         }
@@ -32,5 +35,7 @@ export default class Dropdown extends Component {
 
 Dropdown.propTypes = {
   options: PropTypes.array.isRequired,
-  stage: PropTypes.string.isRequired
+  stage: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
+  answer: PropTypes.number
 };
