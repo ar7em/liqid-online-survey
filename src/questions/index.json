@@ -2,8 +2,7 @@
   "questions": [
     {
       "type": "text",
-      "label": "Who framed Roger Rabbit?",
-      "current": true
+      "label": "Who framed Roger Rabbit?"
     },
     {
       "type": "radio",

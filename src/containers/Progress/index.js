@@ -13,7 +13,7 @@ Progress.propTypes = {
 
 export const mapStateToProps = (state) => {
   const total = state.questions.length;
-  const completed = Object.entries(state.answers).reduce((acc, value) => ( value[1] ? acc+1 : acc), 0);
+  const completed = Object.entries(state.answers).reduce((acc, value) => ( typeof value[1] !== "undefined" ? acc+1 : acc), 0);
   const width = Math.floor((completed / total) * 100);
 
   return {

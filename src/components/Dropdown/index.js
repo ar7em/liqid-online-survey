@@ -11,15 +11,18 @@ export default class Dropdown extends Component {
   render() {
     return (
       <select
-        className={ style.Dropdown }
-        ref={(select) => { this.select = select; }}
-        value={this.props.answer}
+        className={style.Dropdown}
+        ref={(select) => {this.select = select;}}
+        value={this.props.answer || ""}
         onChange={(e) => {
           this.props.onChange(this.props.stage, parseInt(e.target.value, 10));
         }}
       >
+        <option key="placeholder" value="" disabled hidden>
+          Please Choose...
+        </option>
         {
-          this.props.options.map( (option, index) => (
+          this.props.options.map((option, index) => (
             <option
               key={`${this.props.stage}-${index}`}
               value={index}

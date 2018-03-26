@@ -15,6 +15,16 @@
     color: #004cff;
   }
 
+  &--disabled {
+    color: #aaa;
+    cursor: not-allowed;
+
+    &:hover {
+      background: #eee;
+      color: #aaa;
+    }
+  }
+
   &__label {
     text-decoration: underline;
   }

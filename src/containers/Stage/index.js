@@ -14,7 +14,7 @@ const mapTypeToComponent = {
 };
 
 const Stage = (props) => {
-  const { type, label, options } = props.question;
+  const {type, label, options} = props.question;
   const ReplyComponent = mapTypeToComponent[type];
 
   return (
@@ -32,17 +32,10 @@ Stage.propTypes = {
   answer: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
-export const mapStateToProps = (state) => {
-  const question = state.questions.find( (question) => question.current );
-  const questionIndex = state.questions.findIndex( (question) => question.current );
-  const answer = state.answers[questionIndex];
-
-  return {
-    question,
-    questionIndex,
-    answer
-  };
-};
+export const mapStateToProps = (state, ownProps) => ({
+  question: state.questions[ownProps.questionIndex],
+  answer: state.answers[ownProps.questionIndex]
+});
 
 export const mapDispatchToProps = (dispatch) => ({
   reply: (questionIndex, answer) => {

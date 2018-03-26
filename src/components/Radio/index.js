@@ -10,14 +10,14 @@ export default class Radio extends Component {
 
   render() {
     return (
-      <ul className={ style.Radio }>
+      <ul className={style.Radio}>
         {
           this.props.options.map( (option, index) => {
             const key = `${this.props.stage}-${index}`;
             return (
-              <li key={key}>
+              <li key={key} className={ style.Radio__option}>
                 <input
-                  className={ style.Radio__input }
+                  className={style.Radio__input}
                   type="radio"
                   name={this.props.stage}
                   id={key}
@@ -32,7 +32,7 @@ export default class Radio extends Component {
                     }
                   }}
                 />
-                <label className={ style.Radio__label } htmlFor={key}>
+                <label className={style.Radio__label} htmlFor={key}>
                   {option}
                 </label>
               </li>

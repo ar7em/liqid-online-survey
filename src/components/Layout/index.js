@@ -3,4 +3,4 @@ import Cover from "./Cover.js";
 import Sidebar from "./Sidebar.js";
 import Wrapper from "./Wrapper.js";
 
-export default { Content, Cover, Sidebar, Wrapper };
+export default {Content, Cover, Sidebar, Wrapper};

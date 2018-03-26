@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import style from "./style.css";
 
 const Question = (props) => (
-  <div className={ style.Question }>
-    { props.text }
+  <div className={style.Question}>
+    {props.text}
   </div>
 );
 

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import style from "./style.css";
 
 const Sidebar = (props) => (
-  <div className={ style.Layout__Sidebar }>
+  <div className={style.Layout__Sidebar}>
     {props.children}
   </div>
 );

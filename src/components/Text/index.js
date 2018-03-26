@@ -10,11 +10,11 @@ export default class Text extends Component {
 
   render() {
     return (
-      <div className={ style.Text }>
+      <div className={style.Text}>
         <input
-          className={ style.Text__input }
+          className={style.Text__input}
           placeholder="Your answer..."
-          ref={(input) => { this.input = input; }}
+          ref={(input) => {this.input = input;}}
           value={this.props.answer || ""}
           onChange={(event) => {
             this.props.onChange(this.props.stage, event.target.value);
