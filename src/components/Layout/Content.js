@@ -5,7 +5,9 @@ import style from "./style.css";
 
 const Content = (props) => (
   <div className={style.Layout__Content}>
-    {props.children}
+    <div className={style.Layout__Background}>
+      {props.children}
+    </div>
   </div>
 );
 

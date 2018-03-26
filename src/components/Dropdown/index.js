@@ -9,13 +9,16 @@ export default class Dropdown extends Component {
   }
 
   render() {
+    const answer = typeof this.props.answer === "undefined" ? "" : this.props.answer;
+
     return (
       <select
         className={style.Dropdown}
         ref={(select) => {this.select = select;}}
-        value={this.props.answer || ""}
+        value={answer}
         onChange={(e) => {
-          this.props.onChange(this.props.stage, parseInt(e.target.value, 10));
+          const value = e.target.value === "" ? undefined : parseInt(e.target.value, 10);
+          this.props.onChange(this.props.stage, value);
         }}
       >
         <option key="placeholder" value="" disabled hidden>

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import style from "./style.css";
 
 export default class Radio extends Component {
-  componentDidMount(){
+  componentDidMount() {
     this.radio && this.radio.focus();
   }
 
@@ -28,7 +28,7 @@ export default class Radio extends Component {
                   }}
                   ref={(select) => {
                     if (index === 0) {
-                      this.select = select;
+                      this.radio = select;
                     }
                   }}
                 />

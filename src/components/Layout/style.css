@@ -5,18 +5,24 @@ $z-index-content: 10;
   display: flex;
   align-items: stretch;
   align-content: stretch;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
 
   &__Content {
-    flex-grow: 0;
     z-index: $z-index-content;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    text-align: center;
     align-self: center;
-    background: white;
+    min-height: 50%;
+  }
+
+  &__Background {
     border-radius: 9999px;
     padding: 2rem;
-    text-align: center;
+    background: white;
   }
 
   &__Cover {
@@ -28,7 +34,22 @@ $z-index-content: 10;
     z-index: $z-index-background;
   }
 
+  &__Footer {
+    margin-top: 1em;
+    display: flex;
+    height: 3em;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: center;
+  }
+
   &__Sidebar {
     z-index: $z-index-content;
+    width: 50%;
+    text-align: right;
+
+    & + & {
+      text-align: left;
+    }
   }
 }

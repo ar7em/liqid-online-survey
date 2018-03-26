@@ -1,7 +1,5 @@
 .Navigate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   height: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -20,7 +18,7 @@
     cursor: not-allowed;
 
     &:hover {
-      background: #eee;
+      background: rgba(0, 0, 0, 0.05);
       color: #aaa;
     }
   }

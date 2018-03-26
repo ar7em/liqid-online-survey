@@ -17,16 +17,6 @@ const App = () => (
         <Layout.Cover>
           <Progress />
         </Layout.Cover>
-        <Layout.Sidebar>
-          <Switch>
-            <Route path={routes.SUMMARY} component={() => (
-              <Navigate to={routes.LAST_QUESTION} label={"← Back"} />
-            )} />
-            <Route path={routes.ANY_QUESTION} component={(route) => (
-              routes.isFirstQuestion(route) ? null : <Navigate to={routes.getPrevQuestion(route)} label={"← Back"} />
-            )} />
-          </Switch>
-        </Layout.Sidebar>
         <Layout.Content>
           <Switch>
             <Route path={routes.SUMMARY} component={Summary} />
@@ -38,13 +28,25 @@ const App = () => (
             )} />
           </Switch>
         </Layout.Content>
-        <Layout.Sidebar>
-          <Route path={routes.ANY_QUESTION} component={(route) => (
-            routes.isLastQuestion(route) ?
-              <Navigate label={"See Summary"} to={routes.SUMMARY} requireAnswerFor={routes.getIndexFromRoute(route)} /> :
-              <Navigate label={"Next →"} to={routes.getNextQuestion(route)} requireAnswerFor={routes.getIndexFromRoute(route)} />
-          )} />
-        </Layout.Sidebar>
+        <Layout.Footer>
+          <Layout.Sidebar>
+            <Switch>
+              <Route path={routes.SUMMARY} component={() => (
+                <Navigate to={routes.LAST_QUESTION} label={"← Back to questions"} />
+              )} />
+              <Route path={routes.ANY_QUESTION} component={(route) => (
+                routes.isFirstQuestion(route) ? null : <Navigate to={routes.getPrevQuestion(route)} label={"← Back"} />
+              )} />
+            </Switch>
+          </Layout.Sidebar>
+          <Layout.Sidebar>
+            <Route path={routes.ANY_QUESTION} component={(route) => (
+              routes.isLastQuestion(route) ?
+                <Navigate label={"See Summary"} to={routes.SUMMARY} requireAnswerFor={routes.getIndexFromRoute(route)} /> :
+                <Navigate label={"Next →"} to={routes.getNextQuestion(route)} requireAnswerFor={routes.getIndexFromRoute(route)} />
+            )} />
+          </Layout.Sidebar>
+        </Layout.Footer>
       </Layout.Wrapper>
     </ConnectedRouter >
   </Provider>
