@@ -44,7 +44,8 @@
   },
   "scripts": {
     "test": "node node_modules/jest/bin/jest --no-cache --config jest.json --silent --coverage --bail",
-    "start": "webpack-dev-server --open --config=webpack.config.babel.js --mode development"
+    "start": "webpack-dev-server --open --config=webpack.config.babel.js --mode development",
+    "build": "node node_modules/webpack/bin/webpack.js -p --config=webpack.config.babel.js"
   },
   "repository": {
     "type": "git",
