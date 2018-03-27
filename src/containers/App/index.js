@@ -8,6 +8,7 @@ import Navigate from "containers/Navigate";
 import Progress from "containers/Progress";
 import Stage from "containers/Stage";
 import Summary from "containers/Summary";
+import Purge from "containers/Purge";
 import { store, history, persistor } from "store";
 import * as routes from "routes";
 
@@ -19,6 +20,9 @@ const App = () => (
           <Layout.Cover>
             <Progress />
           </Layout.Cover>
+          <Layout.Header>
+            <Purge persistor={persistor}/>
+          </Layout.Header>
           <Layout.Content>
             <Switch>
               <Route path={routes.SUMMARY} component={Summary} />
